@@ -41,6 +41,13 @@ The intent of this repo is to showcase how one can use AWS services to host an a
 The `iac-app/` folder contains the Terraform files to create the infrastrucure for the app (EC2, VPC, etc)
 The `iac-cicd/` folder contains the Terraform files to create the CloudPipeline that will orchestrate the deployment of the app.
 
+### Configuration
+
+Search for strings begining with `<your-`. Those are values that you will need to provide in order to use this code.
+One example is the file `iac-app/compute.tf` that contains a value `public_key`. You need to replace `<your-public-key-value>` with your own if you want to be able to ssh into the created EC2 instances.
+
+You can change the region where your resources will be created in the `vars.tf` file.
+
 ### Run
 
 ```terraform
