@@ -26,9 +26,10 @@ The intent of this repo is to showcase how one can use AWS services to host an a
 - [AWS ELB](https://aws.amazon.com/elasticloadbalancing/)
 - [AWS EC2](https://aws.amazon.com/ec2/)
 
+
 ## Usage
 
-### Structure
+### Structure & Resources
 
 ```bash
 .
@@ -38,8 +39,13 @@ The intent of this repo is to showcase how one can use AWS services to host an a
 └── iac-cicd
 ```
 
+This repo has two folders.
 The `iac-app/` folder contains the Terraform files to create the infrastrucure for the app (EC2, VPC, etc)
 The `iac-cicd/` folder contains the Terraform files to create the CloudPipeline that will orchestrate the deployment of the app.
+
+The `iac-app` Terraform code will create a VPC, EC2 instances that will run the demo app and an ELB to load balance the traffice between the instances.
+The `iac-cidc` Terraform code will create a CodePipeline that orchestrates the deploymemnt of new versions of the application. It uses CodeBuild to build the application and CodeDeploy to manage the deployment of new versions to the EC2 instances. By default, it uses `CodeDeployDefault.AllAtOnce` and attempts to deploy it to as many instances as possible at once. This configuration can be changed so you experiment and understand how the different deployment startegies work.
+More information here: [Working with deployment configurations in CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html)
 
 ### Configuration
 
