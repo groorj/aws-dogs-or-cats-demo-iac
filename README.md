@@ -12,7 +12,7 @@
 
 This repo contains the IaC Terraform code to create the AWS infrastructure for an demo application called the dogs-or-cats.
 
-The application runs on dogs-or-apps.com demo and it's code is not in this repo. This repo contains the code for the creation of the infrastrucution that will support the application.
+The application runs on (dogs-or-cats.com)[http://dogs-or-cats.com/] demo and it's code is not in this repo. This repo contains the code for the creation of the infrastrucution that will support the application.
 
 The intent of this repo is to showcase how one can use AWS services to host an application.
 
