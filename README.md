@@ -1,9 +1,5 @@
 # The dogs-or-cats.com Demo App - AWS IaC Deployment
 
-This repo contains the IaC Terraform code to create the AWS infrastructure for the dogs-or-cats.com app demo.
-
-The dogs-or-apps.com demo application is not in this repo.
-
 ## Table of contents
 
 - [Terraform Documentation](#terraform-documentation)
@@ -12,14 +8,38 @@ The dogs-or-apps.com demo application is not in this repo.
 - [Tips and Tricks](#tips-and-tricks)
 - [Contributing](#contributing)
 
+## What does it do
+
+This repo contains the IaC Terraform code to create the AWS infrastructure for an demo application called the dogs-or-cats.
+
+The application runs on dogs-or-apps.com demo and it's code is not in this repo. This repo contains the code for the creation of the infrastrucution that will support the application.
+
+The intent of this repo is to showcase how one can use AWS services to host an application.
+
+## This project uses / Dependencies
+
+- [AWS CodePipeline](https://aws.amazon.com/codepipeline/)
+- [AWS Build](https://aws.amazon.com/codebuild/)
+- [AWS CodeDeploy](https://aws.amazon.com/codedeploy/)
+- [AWS Identity & Access Management](https://aws.amazon.com/iam/)
+- [Amazon Virtual Private Cloud](https://aws.amazon.com/iam/)
+- [AWS ELB](https://aws.amazon.com/elasticloadbalancing/)
+- [AWS EC2](https://aws.amazon.com/ec2/)
+
 ## Usage
 
 ### Structure
 
 ```bash
 .
-└── aws
+├── LICENSE
+├── README.md
+├── iac-app
+└── iac-cicd
 ```
+
+The `iac-app/` folder contains the Terraform files to create the infrastrucure for the app (EC2, VPC, etc)
+The `iac-cicd/` folder contains the Terraform files to create the CloudPipeline that will orchestrate the deployment of the app.
 
 ### Run
 
@@ -90,6 +110,12 @@ Output:
 ```bash
 Success! The configuration is valid.
 ```
+
+## Notes
+
+- Congratulations on successfully setting CodePipeline and related infrastructure to manage the lifecycle of an demo app using AWS services.
+- Running this code will create AWS resources in your account that might not be included in the free tier.
+- Use this code at your own risk, I am not responsible for anything related to its use.
 
 ## Contributing
 
